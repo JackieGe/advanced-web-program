@@ -48,6 +48,8 @@
     var block = document.getElementsByClassName("block")[0];
     block.addEventListener('mouseout', function (evt) {
 
+        // mouse hover时，不断🉐️快速点击鼠标，可能会触发mouseout事件，尽管并不是真正将鼠标move out了。
+        // 这里通过offsetX，offsetY来判断鼠标的位置，是否真正还在div内
         if (evt.offsetX <= 0 || evt.offsetY <= 0 || evt.offsetX >= block.offsetWidth || evt.offsetY >= block.offsetHeight) {
             console.log('Really moved out');
             if (this.classList.contains('isActive')) {

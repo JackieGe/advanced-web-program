@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94a5384d-0e0c-4a47-9d1b-754247d8c38f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch2-css-hover/READ.MD" />
+    <list default="true" id="94a5384d-0e0c-4a47-9d1b-754247d8c38f" name="Default" comment="Refine styling">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch2-css-hover/composition-overlay.html" afterPath="$PROJECT_DIR$/ch2-css-hover/composition-overlay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch2-css-hover/sample-overlay.html" afterPath="$PROJECT_DIR$/ch2-css-hover/sample-overlay.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/ch1-async-loading/calc1.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="32" />
+              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -57,25 +58,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="composition-overlay.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="composition-overlay.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ch2-css-hover/composition-overlay.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="410">
+              <caret line="109" column="50" lean-forward="false" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
               <folding>
-                <element signature="e#1606#1951#0" expanded="false" />
-                <element signature="e#2007#2402#0" expanded="false" />
+                <element signature="e#2266#2661#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="READ.MD" pinned="false" current-in-tab="true">
+      <file leaf-file-name="READ.MD" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ch2-css-hover/READ.MD">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="30">
-                <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -86,8 +86,8 @@
       <file leaf-file-name="sample-overlay.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ch2-css-hover/sample-overlay.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+            <state relative-caret-position="320">
+              <caret line="66" column="14" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -149,15 +149,15 @@
         <option value="$PROJECT_DIR$/ch1-async-loading/script-element-async-load.html" />
         <option value="$PROJECT_DIR$/ch1-async-loading/util.js" />
         <option value="$PROJECT_DIR$/ch1-async-loading/sync-load.html" />
-        <option value="$PROJECT_DIR$/ch1-async-loading/calc1.js" />
         <option value="$PROJECT_DIR$/ch1-async-loading/calc2.js" />
         <option value="$PROJECT_DIR$/ch1-async-loading/script-element-load.html" />
         <option value="$PROJECT_DIR$/ch1-async-loading/ajax-loading.html" />
         <option value="$PROJECT_DIR$/ch2-css-hover/index.html" />
         <option value="$PROJECT_DIR$/ch2-css-hover/sample-overlay2.html" />
+        <option value="$PROJECT_DIR$/ch2-css-hover/READ.MD" />
+        <option value="$PROJECT_DIR$/ch1-async-loading/calc1.js" />
         <option value="$PROJECT_DIR$/ch2-css-hover/sample-overlay.html" />
         <option value="$PROJECT_DIR$/ch2-css-hover/composition-overlay.html" />
-        <option value="$PROJECT_DIR$/ch2-css-hover/READ.MD" />
       </list>
     </option>
   </component>
@@ -258,7 +258,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1503103279697</updated>
-      <workItem from="1503103282400" duration="14731000" />
+      <workItem from="1503103282400" duration="19962000" />
     </task>
     <task id="LOCAL-00001" summary="Add chapter2 - to keep hover state&#10;在Mouse hover时，如果快速点击鼠标，可能会丢失mouse hover的效果。这在windows上的浏览器经常出现，造成'闪烁'。虽然在macbook上出现的时候很少。&#10;解决方案：点击鼠标时，添加isActive 样式，强制显示'hover'里的样式。等mouse out时，去掉isActive class。">
       <created>1503138447932</created>
@@ -267,11 +267,25 @@
       <option name="project" value="LOCAL" />
       <updated>1503138447932</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add readme">
+      <created>1503138505456</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1503138505456</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refine styling">
+      <created>1503142271601</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1503142271601</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14731000" />
+    <option name="totallyTimeSpent" value="19962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="29" y="23" width="1450" height="723" extended-state="0" />
@@ -304,10 +318,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add chapter2 - to keep hover state&#10;在Mouse hover时，如果快速点击鼠标，可能会丢失mouse hover的效果。这在windows上的浏览器经常出现，造成'闪烁'。虽然在macbook上出现的时候很少。&#10;解决方案：点击鼠标时，添加isActive 样式，强制显示'hover'里的样式。等mouse out时，去掉isActive class。" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add chapter2 - to keep hover state&#10;在Mouse hover时，如果快速点击鼠标，可能会丢失mouse hover的效果。这在windows上的浏览器经常出现，造成'闪烁'。虽然在macbook上出现的时候很少。&#10;解决方案：点击鼠标时，添加isActive 样式，强制显示'hover'里的样式。等mouse out时，去掉isActive class。" />
+    <MESSAGE value="Add readme" />
+    <MESSAGE value="Refine styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refine styling" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -323,14 +341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch1-async-loading/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -359,10 +369,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ch1-async-loading/calc1.js">
+    <entry file="file://$PROJECT_DIR$/ch2-css-hover/READ.MD">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch1-async-loading/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="32" />
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -375,33 +396,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ch1-async-loading/calc1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ch2-css-hover/sample-overlay.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        <state relative-caret-position="320">
+          <caret line="66" column="14" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ch2-css-hover/composition-overlay.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="410">
+          <caret line="109" column="50" lean-forward="false" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
           <folding>
-            <element signature="e#1606#1951#0" expanded="false" />
-            <element signature="e#2007#2402#0" expanded="false" />
+            <element signature="e#2266#2661#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch2-css-hover/READ.MD">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="30">
-            <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
