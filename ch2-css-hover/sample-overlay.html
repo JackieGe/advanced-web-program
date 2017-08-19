@@ -9,12 +9,15 @@
             top: 100px;
             left: 100px;
             display: inline-block;
-            width: 200px;
-            height: 120px;
+            width: 300px;
+            border-radius: 4px;
+            border:1px solid ;
         }
 
         .block__overlay {
             position: absolute;
+            top:0;
+            left:0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, .3);
@@ -30,6 +33,12 @@
 </head>
 <body>
 <div class="block">
+    <p>
+        在Mouse hover时，如果快速点击鼠标，可能会丢失mouse hover的效果。这在windows上的浏览器经常出现，造成'闪烁'。虽然在macbook上出现的时候很少。
+    </p>
+    <p>
+        解决方案：点击鼠标时，添加isActive 样式，强制显示'hover'里的样式。等mouse out时，去掉isActive class。
+    </p>
     <div class="block__overlay">
     </div>
 

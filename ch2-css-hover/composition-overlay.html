@@ -9,24 +9,26 @@
             top: 100px;
             left: 100px;
             display: inline-block;
-            width: 200px;
-            height: 120px;
+            width: 300px;
+            border: 1px solid;
+            border-radius: 4px;
         }
 
         .block__overlay {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, .3);
         }
 
         .block:hover .block__overlay,
-        .block.isAactive .block__overlay {
+        .block.isActive .block__overlay {
             background-color: rgba(100, 200, 0, .5);
-            cursor: pointer;
         }
 
-        .block__cirle {
+        .block__circle {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -38,14 +40,14 @@
             border-radius: 50%;
         }
 
-        .block__cirle::after {
+        .block__circle::after {
             content: '';
             position: absolute;
             top: 2px;
             left: 9px;
             width: 15px;
             height: 25px;
-            border: 4px solid white;
+            border: 4px solid #eef;
             border-top: none;
             border-left: none;
             -webkit-transform: rotate(30deg);
@@ -59,10 +61,16 @@
 </head>
 <body>
 <div class="block">
+    <p>
+        在Mouse hover时，如果快速点击鼠标，可能会丢失mouse hover的效果。这在windows上的浏览器经常出现，造成'闪烁'。虽然在macbook上出现的时候很少。
+    </p>
+    <p>
+        解决方案：点击鼠标时，添加isActive 样式，强制显示'hover'里的样式。等mouse out时，去掉isActive class。
+    </p>
     <div class="block__overlay">
     </div>
 
-    <div class="block__cirle">
+    <div class="block__circle">
     </div>
 </div>
 <script>
@@ -132,7 +140,8 @@
     block.addEventListener('click', function (evt) {
         if (!this.classList.contains('isActive')) {
             this.classList.add('isActive');
-        };
+        }
+        ;
     }, false);
 </script>
 </body>
