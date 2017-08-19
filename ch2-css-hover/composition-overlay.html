@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .block {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            display: inline-block;
+            width: 200px;
+            height: 120px;
+        }
+
+        .block__overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .block:hover .block__overlay,
+        .block.isAactive .block__overlay {
+            background-color: rgba(100, 200, 0, .5);
+            cursor: pointer;
+        }
+
+        .block__cirle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 40px;
+            height: 40px;
+            border: 8px solid red;
+            border-radius: 50%;
+        }
+
+        .block__cirle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 9px;
+            width: 15px;
+            height: 25px;
+            border: 4px solid white;
+            border-top: none;
+            border-left: none;
+            -webkit-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+            transform: rotate(30deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="block">
+    <div class="block__overlay">
+    </div>
+
+    <div class="block__cirle">
+    </div>
+</div>
+<script>
+    function getToElement(evt) {
+        var node;
+        if (evt.type == 'mouseout') {
+            node = evt.relatedTarget;
+        } else if (evt.type == 'mouseover') {
+            node = evt.target;
+        }
+
+        if (!node) {
+            return;
+        }
+
+        while (node.nodeType != 1) {
+            node = node.parentNode;
+        }
+        return node;
+    }
+
+    HTMLElement.prototype.isChildOf = function (elem) {
+        if (elem && elem.children) {
+            for (var i = 0; i < elem.childElementCount; i++) {
+                var child = elem.children[i];
+                if (child == this) {
+                    return true;
+                } else if (child.childElementCount > 0) {
+                    return this.isChildOf(child);
+                }
+            }
+        }
+        return false;
+    }
+
+    var block = document.getElementsByClassName("block")[0];
+    block.addEventListener('mouseout', function (evt) {
+
+        var toElement = evt.toElement || getToElement(evt);
+        if (toElement == this || toElement.isChildOf(this)) {
+            console.log('Does NOT really move out');
+        } else {
+            console.log('Really moved out');
+            if (this.classList.contains('isActive')) {
+                this.classList.remove('isActive');
+            }
+        }
+
+        /***
+         * The below code: the old way no long works correctly, because offsetX, offsetY rely on fromElement.
+         * When mouse move up direction out of 'circle', the OffsetY could be negative, but mouse
+         * is still inside the outermost div.
+         */
+
+        /*
+        if (evt.offsetX <= 0 || evt.offsetY <= 0 || evt.offsetX >= block.offsetWidth || evt.offsetY >= block.offsetHeight) {
+            console.log('OLD way: Really moved out');
+            if (this.classList.contains('isActive')) {
+                this.classList.remove('isActive');
+            }
+        } else {
+            console.log('OLD way: Doest NOT move out');
+        }*/
+
+    }, false);
+
+    block.addEventListener('click', function (evt) {
+        if (!this.classList.contains('isActive')) {
+            this.classList.add('isActive');
+        };
+    }, false);
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .block {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            display: inline-block;
+            width: 200px;
+            height: 120px;
+        }
+
+        .block__overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .block:hover .block__overlay,
+        .block.isActive .block__overlay {
+            background-color: rgba(100, 200, 0, .5);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="block">
+    <div class="block__overlay">
+    </div>
+
+</div>
+<script>
+
+    var block = document.getElementsByClassName("block")[0];
+    block.addEventListener('mouseout', function (evt) {
+
+        if (evt.offsetX <= 0 || evt.offsetY <= 0 || evt.offsetX >= block.offsetWidth || evt.offsetY >= block.offsetHeight) {
+            console.log('Really moved out');
+            if (this.classList.contains('isActive')) {
+                this.classList.remove('isActive');
+            }
+        }
+
+        // for testing
+//        console.log('offset:', evt.offsetX, evt.offsetY);
+//        console.log('xy:', evt.x, evt.y);
+//        console.log('page:', evt.pageX, evt.pageY);
+//        console.log('fromElement:', evt.fromElement ? evt.fromElement.tagName : null, evt.fromElement ? evt.fromElement.className : null);
+//        console.log('toElement:', evt.toElement ? evt.toElement.tagName : null, evt.toElement ? evt.toElement.className : null);
+//        console.log('range parent', evt.rangeParent)
+    }, false);
+
+    block.addEventListener('click', function (evt) {
+        if (!this.classList.contains('isActive')) {
+            this.classList.add('isActive');
+        }
+    }, false);
+</script>
+</body>
+</html>
