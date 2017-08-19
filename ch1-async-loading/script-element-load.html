@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function loadScript(file, callbackFn) {
+            var script = document.createElement('script');
+            script.src= file;
+            script.type='text/javascript';
+            script.onload = callbackFn;
+            document.getElementsByTagName('head')[0].appendChild(script)
+        }
+
+        loadScript('calc1.js', function () {
+            loadScript('calc2.js');
+        } );
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

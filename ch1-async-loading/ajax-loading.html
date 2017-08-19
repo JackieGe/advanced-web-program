@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function loadScript(file, callbackFn) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', file, true);
+            // for IE
+            if (xhr.onreadystatechange) {
+                xhr.onreadystatechange = function () {
+                    console.log(xhr.readyState, xhr.status);
+                    if (xhr.readyState == 4) {
+                        if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+                            insertScriptText(xhr.responseText);
+                            if (callbackFn) {
+                                callbackFn();
+                            }
+                        }
+                    }
+                }
+            } else {
+                xhr.onload = function () {
+                    insertScriptText(xhr.responseText);
+                    if (callbackFn) {
+                        callbackFn();
+                    }
+                }
+            }
+            xhr.send(null);
+        }
+
+        function insertScriptText(scriptText) {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.text = scriptText;
+            document.body.appendChild(script);
+        }
+
+        loadScript('calc1.js', function () {
+            loadScript('calc2.js');
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
