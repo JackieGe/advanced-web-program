@@ -25,7 +25,7 @@
 
         .block:hover .block__overlay,
         .block.isActive .block__overlay {
-            background-color: rgba(100, 200, 0, .5);
+            background-color: rgba(100, 0, 200, .5);
         }
 
         .block__circle {
@@ -40,14 +40,26 @@
             border-radius: 50%;
         }
 
-        .block__circle::after {
+        .block__circle input[type="checkbox"] {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .block__circle label {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .block__circle label::after {
             content: '';
             position: absolute;
             top: 2px;
             left: 9px;
             width: 15px;
             height: 25px;
-            border: 4px solid #eef;
+            border: 4px solid rgba(224, 224, 255, .5);
             border-top: none;
             border-left: none;
             -webkit-transform: rotate(30deg);
@@ -55,23 +67,56 @@
             -ms-transform: rotate(30deg);
             -o-transform: rotate(30deg);
             transform: rotate(30deg);
+            visibility: hidden;
+        }
+
+        .block__circle label:hover::after  {
+            visibility: visible;
+        }
+
+        .block__circle input[type="checkbox"]:checked + label::after {
+            visibility: visible;
+            border-color: rgb(224, 224, 255);
+        }
+
+        .block__viewer {
+            position: absolute;
+            bottom: 10px;
+            left:50%;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+            width: 100px;
+            height: 30px;
+            border:1px solid;
+            border-radius: 4px;
+            background-color: red;
+            color: #fff;
+            outline: none;
+            visibility: hidden;
+        }
+
+        .block:hover .block__viewer {
+            visibility: visible;
         }
 
     </style>
 </head>
 <body>
 <div class="block">
-    <p>
-        在Mouse hover时，如果快速点击鼠标，可能会丢失mouse hover的效果。这在windows上的浏览器经常出现，造成'闪烁'。虽然在macbook上出现的时候很少。
-    </p>
-    <p>
-        解决方案：点击鼠标时，添加isActive 样式，强制显示'hover'里的样式。等mouse out时，去掉isActive class。
-    </p>
+    <img src="tianyuan1.jpg" style="width: 300px;">
     <div class="block__overlay">
     </div>
 
     <div class="block__circle">
+        <input id="chk1" type="checkbox">
+        <label for="chk1"></label>
     </div>
+    <button class="block__viewer">
+        click to view
+    </button>
 </div>
 <script>
     function getToElement(evt) {
