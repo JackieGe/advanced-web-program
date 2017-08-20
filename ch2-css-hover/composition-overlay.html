@@ -137,6 +137,31 @@
         return node;
     }
 
+    var findElement = (function(){
+        var found = false;
+
+        function doFindElement(target, scope) {
+            if (!found && scope && scope.childElementCount > 0) {
+                for (var i=0; i< scope.childElementCount; i++) {
+                    var child = scope.children[i];
+                    if (target == child) {
+                        found = true;
+                        return;
+                    } else if (child.childElementCount > 0) {
+                        doFindElement(target, child, found)
+                    }
+                }
+            }
+        }
+
+        return function (target, scope) {
+            found = false;
+            doFindElement(target, scope);
+            return found;
+        };
+    })();
+
+    /*
     HTMLElement.prototype.isChildOf = function (elem) {
         if (elem && elem.children) {
             for (var i = 0; i < elem.childElementCount; i++) {
@@ -149,13 +174,12 @@
             }
         }
         return false;
-    }
+    }*/
 
     var block = document.getElementsByClassName("block")[0];
     block.addEventListener('mouseout', function (evt) {
-
         var toElement = evt.toElement || getToElement(evt);
-        if (toElement == this || toElement.isChildOf(this)) {
+        if (toElement == this || findElement(toElement, this)) {
             console.log('Does NOT really move out');
         } else {
             console.log('Really moved out');
