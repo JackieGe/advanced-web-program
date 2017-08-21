@@ -98,7 +98,8 @@
             visibility: hidden;
         }
 
-        .block:hover .block__viewer {
+        .block:hover .block__viewer,
+        .block.isActive .block__viewer {
             visibility: visible;
         }
 
@@ -178,7 +179,7 @@
 
     var block = document.getElementsByClassName("block")[0];
     block.addEventListener('mouseout', function (evt) {
-        var toElement = evt.toElement || getToElement(evt);
+        var toElement = evt.toElement || getToElement(evt) || evt.srcElement;
         if (toElement == this || findElement(toElement, this)) {
             console.log('Does NOT really move out');
         } else {
