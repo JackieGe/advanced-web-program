@@ -162,6 +162,7 @@
         };
     })();
 
+    /*经测试，此方法不能总是正确的。所以改用findElement*/
     /*
     HTMLElement.prototype.isChildOf = function (elem) {
         if (elem && elem.children) {
