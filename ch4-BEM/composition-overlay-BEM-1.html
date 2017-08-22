@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="common/circle-in-BEM.css">
+    <style>
+        .block {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            display: inline-block;
+            width: 300px;
+            border: 1px solid;
+            border-radius: 4px;
+        }
+
+        .block__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .block:hover .block__overlay,
+        .block--isActive .block__overlay {
+            background-color: rgba(100, 0, 200, .5);
+        }
+
+        .block__viewer {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+            width: 100px;
+            height: 30px;
+            border: 1px solid;
+            border-radius: 4px;
+            background-color: red;
+            color: #fff;
+            outline: none;
+            visibility: hidden;
+        }
+
+        .block:hover .block__viewer,
+        .block--isActive .block__viewer {
+            visibility: visible;
+        }
+
+        /* position */
+        .block__circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .block__desc {
+            color: white;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+        <img src="tianyuan1.jpg" style="width: 300px;">
+
+        <div class="block__overlay"></div>
+
+        <div class="block__circle">
+            <div class="circle">
+                <input class="circle__originCheckbox" id="chk1" type="checkbox">
+                <label class="circle__label" for="chk1"></label>
+            </div>
+        </div>
+
+        <label class="block__desc"> A nice picture <label>
+        <button class="block__viewer">
+            click to view
+        </button>
+    </div>
+    <script>
+        function getToElement(evt) {
+            var node;
+            if (evt.type == 'mouseout') {
+                node = evt.relatedTarget;
+            } else if (evt.type == 'mouseover') {
+                node = evt.target;
+            }
+
+            if (!node) {
+                return;
+            }
+
+            while (node.nodeType != 1) {
+                node = node.parentNode;
+            }
+            return node;
+        }
+
+        var findElement = (function () {
+            var found = false;
+
+            function doFindElement(target, scope) {
+                if (!found && scope && scope.childElementCount > 0) {
+                    for (var i = 0; i < scope.childElementCount; i++) {
+                        var child = scope.children[i];
+                        if (target == child) {
+                            found = true;
+                            return;
+                        } else if (child.childElementCount > 0) {
+                            doFindElement(target, child, found)
+                        }
+                    }
+                }
+            }
+
+            return function (target, scope) {
+                found = false;
+                doFindElement(target, scope);
+                return found;
+            };
+        })();
+
+        var block = document.getElementsByClassName("block")[0];
+        block.addEventListener('mouseout', function (evt) {
+            var toElement = evt.toElement || getToElement(evt) || evt.srcElement;
+            if (toElement == this || findElement(toElement, this)) {
+                console.log('Does NOT really move out');
+            } else {
+                console.log('Really moved out');
+                if (this.classList.contains('block--isActive')) {
+                    this.classList.remove('block--isActive');
+                }
+            }
+
+        }, false);
+
+        block.addEventListener('click', function (evt) {
+            if (!this.classList.contains('block--isActive')) {
+                this.classList.add('block--isActive');
+            }
+        }, false);
+    </script>
+</body>
+
+</html>
