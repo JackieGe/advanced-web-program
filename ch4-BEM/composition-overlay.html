@@ -15,7 +15,7 @@
             border-radius: 4px;
         }
 
-        .block__overlay {
+        .blockOverlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -24,12 +24,12 @@
             background-color: rgba(0, 0, 0, .3);
         }
 
-        .block:hover .block__overlay,
-        .block.isActive .block__overlay {
+        .block:hover .blockOverlay,
+        .block.isActive .blockOverlay {
             background-color: rgba(100, 0, 200, .5);
         }
 
-        .block__viewer {
+        .blockViewer {
             position: absolute;
             bottom: 30px;
             left:50%;
@@ -48,8 +48,8 @@
             visibility: hidden;
         }
 
-        .block:hover .block__viewer,
-        .block.isActive .block__viewer {
+        .block:hover .blockViewer,
+        .block.isActive .blockViewer {
             visibility: visible;
         }
 
@@ -61,16 +61,22 @@
             transform: translate(-50%, -50%);
         }
 
+        /*
+            show side effects here: although we want to change label styles only for label in side this html, it actualy 
+            affects .circle's label.
+            recommend not using label
+        */
         label {
             color: white;
             background-color:blueviolet;
         }
+
     </style>
 </head>
 <body>
 <div class="block">
     <img src="tianyuan1.jpg" style="width: 300px;">
-    <div class="block__overlay">
+    <div class="blockOverlay">
     </div>
 
     <div class="circle">
@@ -78,7 +84,7 @@
         <label for="chk1"></label>
     </div>
     <label> A nice picture <label>
-    <button class="block__viewer">
+    <button class="blockViewer">
         click to view
     </button>
 </div>
