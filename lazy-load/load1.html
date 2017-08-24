@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button>
+        Click to View
+    </button>
+
+    <div>
+        <img src="resource/loading.gif" data-original="http://www.sinaimg.cn/dy/slidenews/1_img/2017_34/88490_1386600_929435.jpg">
+    </div>
+</div>
+<script>
+    function loadImage(oImg) {
+        var url = oImg.dataset.original?oImg.dataset.original:oImg.getAttribute('data-original');
+        var img = new Image();
+        img.onload = function () {
+            oImg.src = img.src;
+        }
+        img.src = url;
+    }
+
+
+    var btn = document.getElementsByTagName('button')[0];
+    btn.addEventListener('click', function () {
+        var oImg = document.getElementsByTagName('img')[0];
+        loadImage(oImg);
+    }, false);
+
+
+</script>
+</body>
+</html>
