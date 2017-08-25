@@ -11,13 +11,8 @@
 </head>
 <body>
 <div>
-    <button>
-        Click to View
-    </button>
-
     <div>
-        <img src="resource/loading.gif"
-             data-original="resource/img1.jpeg">
+        <img src="resource/loading.gif" data-original="resource/img1.jpeg">
     </div>
     <div>
         <img src="resource/loading.gif" data-original="resource/img2.jpeg">
@@ -42,46 +37,43 @@
         img.onload = function () {
             oImg.style.opacity = 0.5;
             oImg.src = img.src;
-            oImg.isload = true;
             setTimeout(function () {
-                oImg.style.transition='1s opacity';
+                oImg.style.transition = '1s opacity';
                 oImg.style.opacity = 1;
+                oImg.isload = true;
             }, 50)
         }
         img.src = url;
     }
 
-    var timeoutHanlder;
-    function loadVisibleImages() {
-        if (timeoutHanlder) {
-            clearTimeout(timeoutHanlder);
-        }
-
-        timeoutHanlder = setTimeout(function () {
-            var images = document.getElementsByTagName('img');
-            for (var i = 0; i < images.length; i++) {
-                var rect = images[i].getBoundingClientRect();
-                if (0 <= rect.top && rect.top < document.documentElement.clientHeight + 200 ||
-                    -200 <= rect.bottom && rect.bottom <=document.documentElement.clientHeight) {
-                    loadImage(images[i]);
-                }
-//                var imageTop = images[i].getBoundingClientRect().top;
-
-//                var clientHeight = document.documentElement.clientHeight
-//                if (-600 < imageTop && imageTop < clientHeight+600 && !images[i].isload) {
-//                    loadImage(images[i]);
-//                }
+    var loadVisibleImages = (function () {
+        var images = document.getElementsByTagName('img');
+        var timeoutObj;
+        return function () {
+            if (timeoutObj) {
+                clearTimeout(timeoutObj);
             }
-        },500)
-    }
 
+            timeoutObj = setTimeout(function () {
+                for (var i = 0; i < images.length; i++) {
+                    var rect = images[i].getBoundingClientRect();
+                    if (-200 <= rect.bottom && rect.top <= document.documentElement.clientHeight + 200) {
+
+                        if (!images[i].isload) {
+                            loadImage(images[i]);
+
+                        } else {
+                            console.log('image[' + i + '] has loaded');
+                        }
+                    }
+                }
+            }, 200)
+        }
+    })();
 
     window.onscroll = function (evt) {
-
         loadVisibleImages();
-
     }
-
     loadVisibleImages();
 
 
