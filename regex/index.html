@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn1"> Click</button>
+<div id="divMain" class="myClass">
+
+</div>
+<script src="queryABC.js">
+</script>
+
+<script>
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function () {
+        var div1 = document.querySelectorABC('  .myClass #divMain div');
+        var div2 = querySelectorABC(document,"#divMain .myClass");
+        console.log(div1 == div2);
+    }
+</script>
+</body>
+</html>

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94a5384d-0e0c-4a47-9d1b-754247d8c38f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/regex/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/regex/queryABC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/regex/reg.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch4-lazy-load/load2.html" afterPath="$PROJECT_DIR$/ch4-lazy-load/load2.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +22,8 @@
       <file leaf-file-name="DHTML.js" pinned="false" current-in-tab="false">
         <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28350">
-              <caret line="1890" column="0" lean-forward="false" selection-start-line="1890" selection-start-column="0" selection-end-line="1890" selection-end-column="0" />
+            <state relative-caret-position="815">
+              <caret line="1387" column="0" lean-forward="false" selection-start-line="1387" selection-start-column="0" selection-end-line="1387" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -29,27 +31,6 @@
       </file>
       <file leaf-file-name="img1.jpeg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ch4-lazy-load/resource/img1.jpeg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img2.jpeg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ch4-lazy-load/resource/img2.jpeg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img3.jpeg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ch4-lazy-load/resource/img3.jpeg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img4.jpeg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ch4-lazy-load/resource/img4.jpeg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -72,18 +53,18 @@
       <file leaf-file-name="load1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ch4-lazy-load/load1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="load2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="load2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ch4-lazy-load/load2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="65" column="71" lean-forward="true" selection-start-line="65" selection-start-column="71" selection-end-line="65" selection-end-column="71" />
+            <state relative-caret-position="286">
+              <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -93,6 +74,38 @@
         <entry file="file://$PROJECT_DIR$/ch4-lazy-load/resource/loading.gif">
           <provider selected="true" editor-type-id="images">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/regex/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reg.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/regex/reg.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queryABC.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/regex/queryABC.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="74" lean-forward="false" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -113,6 +126,10 @@
       <find>block__overlay</find>
       <find>onload</find>
       <find>opacity</find>
+      <find>isload</find>
+      <find>/(#(\w+))?(\.(\w+))?(\w+)?</find>
+      <find>document</find>
+      <find>/^(#)?(\.)?(\w+)$/img</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,6 +164,11 @@
         <option value="$PROJECT_DIR$/lazy-load/load1.html" />
         <option value="$PROJECT_DIR$/lazy-load/load2.html" />
         <option value="$PROJECT_DIR$/ch4-lazy-load/load2.html" />
+        <option value="$PROJECT_DIR$/regex/reg.js" />
+        <option value="$PROJECT_DIR$/regex/reg2.js" />
+        <option value="$PROJECT_DIR$/regex/reg.html" />
+        <option value="$PROJECT_DIR$/regex/queryABC.js" />
+        <option value="$PROJECT_DIR$/regex/index.html" />
       </list>
     </option>
   </component>
@@ -163,7 +185,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="723" />
@@ -184,6 +206,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,12 +226,15 @@
               <item name="ch4-lazy-load" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="advanced-web-program" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-web-program" type="462c0819:PsiDirectoryNode" />
+              <item name="regex" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,7 +287,8 @@
       <workItem from="1503326058897" duration="400000" />
       <workItem from="1503583901455" duration="5153000" />
       <workItem from="1503590413493" duration="94000" />
-      <workItem from="1503616499589" duration="2539000" />
+      <workItem from="1503616499589" duration="3661000" />
+      <workItem from="1503739058455" duration="10459000" />
     </task>
     <task id="LOCAL-00001" summary="Add chapter2 - to keep hover state&#10;在Mouse hover时，如果快速点击鼠标，可能会丢失mouse hover的效果。这在windows上的浏览器经常出现，造成'闪烁'。虽然在macbook上出现的时候很少。&#10;解决方案：点击鼠标时，添加isActive 样式，强制显示'hover'里的样式。等mouse out时，去掉isActive class。">
       <created>1503138447932</created>
@@ -311,14 +339,21 @@
       <option name="project" value="LOCAL" />
       <updated>1503590371265</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="revise the coding and fix bugs">
+      <created>1503619660068</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1503619660068</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43421000" />
+    <option name="totallyTimeSpent" value="55002000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="723" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="723" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -355,18 +390,16 @@
     <MESSAGE value="revise the function of find child element" />
     <MESSAGE value="Add lazy-loading example" />
     <MESSAGE value="rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename" />
+    <MESSAGE value="revise the coding and fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="revise the coding and fix bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css-image-preloading/bgImage-hover-preload.html" />
-    <entry file="file://$PROJECT_DIR$/css-image-preloading/bgImage-hover-switch.html" />
-    <entry file="file://$PROJECT_DIR$/css-image-preloading/bgImage-hover.html" />
     <entry file="file://$PROJECT_DIR$/css-image-preloading/circle-active.svg" />
     <entry file="file://$PROJECT_DIR$/css-image-preloading/circle-grey.svg" />
     <entry file="file://$PROJECT_DIR$/css-image-preloading/bgImage-hover-switch-preload.html" />
@@ -577,14 +610,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28350">
-          <caret line="1890" column="0" lean-forward="false" selection-start-line="1890" selection-start-column="0" selection-end-line="1890" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch4-lazy-load/resource/img1.jpeg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -592,16 +617,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ch4-lazy-load/load1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="360">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ch4-lazy-load/load2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="65" column="71" lean-forward="true" selection-start-line="65" selection-start-column="71" selection-end-line="65" selection-end-column="71" />
+        <state relative-caret-position="286">
+          <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="815">
+          <caret line="1387" column="0" lean-forward="false" selection-start-line="1387" selection-start-column="0" selection-end-line="1387" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex/reg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex/queryABC.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="74" lean-forward="false" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding />
         </state>
       </provider>
