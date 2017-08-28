@@ -1,6 +1,7 @@
 ;
 (function (window) {
 
+    // the pattern cannot be /#(\w+)?\.(\w+)?(\w+)?/img
     var pattern = /(#(\w+))?(\.(\w+))?(\w+)?/img;
 
     HTMLDocument.prototype.querySelectorABC = function (selector) {
@@ -15,6 +16,7 @@
 
     function querySelectorABC(scope, selector) {
         var id, className, tagName;
+        // use the replace callback to get the id/className/tagName
         selector.replace(pattern, function () {
             if (arguments[2]) {
                 id = arguments[2];
@@ -27,29 +29,31 @@
             }
         })
 
-        var doms;
         if (id) {
-            doms = scope.getElementById(id);
+            var dom = scope.getElementById(id);
             if (className && tagName) {
-                return doms.className == className && doms.tagName.toLowerCase() == tagName.toLowerCase() ? doms : null;
+                return dom.className == className && dom.tagName.toLowerCase() == tagName.toLowerCase() ? dom : null;
             } else if (className) {
-                return doms.className == className ? doms : null;
+                return dom.className == className ? dom : null;
             } else if (tagName) {
-                return doms.tagName.toLowerCase() == tagName.toLowerCase() ? doms : null;
+                return dom.tagName.toLowerCase() == tagName.toLowerCase() ? dom : null;
             } else {
-                return doms;
+                return dom;
             }
         }
         else if (className) {
-            doms = scope.getElementsByClassName(className);
+            var doms = scope.getElementsByClassName(className);
             if (tagName) {
-                return doms.tagName.toLowerCase() == tagName.toLowerCase() ? doms : null;
+                doms = Array.prototype.slice.call(doms).filter( function(ele, index) {
+                    return ele.tagName.toLowerCase() == tagName.toLowerCase()
+                })
+                return doms;
             } else {
                 return doms;
             }
         } else if (tagName) {
-            doms = scope.getElementsByName(tagName);
-            return doms;
+            dom = scope.getElementsByTagName(tagName);
+            return dom;
         } else {
             return null;
         }
