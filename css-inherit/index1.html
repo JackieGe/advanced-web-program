@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background:url("http://images2015.cnblogs.com/blog/608782/201609/608782-20160926101029078-1479229145.jpg") no-repeat;
+        }
+        
+        .div::before {
+            content: '';
+            background: inherit;
+            position: absolute;
+            top:100%;
+            bottom:-100%;
+            left:0;
+            right:0;
+            -webkit-transform: rotateX(180deg);
+            -moz-transform: rotateX(180deg);
+            -ms-transform: rotateX(180deg);
+            -o-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+        }
+
+        .div::after {
+            content: '';
+            position: absolute;
+            top:100%;
+            bottom:-100%;
+            left:0;
+            right:0;
+            /*background: -webkit-linear-gradient(top, #cccccc, #000000);*/
+            /*background: linear-gradient(0deg, rgba(255, 255, 255, 1)0%, rgba(255, 255, 0, 0)100%);*/
+            z-index: 2;
+            background: -webkit-linear-gradient(45deg, rgba(255,255,255,0.8)0, rgba(255,0,0,0.3)50%,rgba(0,0,0,1));
+            /*background: linear-gradient(top left, #cccccc 0%, #eeeeff 100%);*/
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="img1" src="../resource/loading.gif">
+<script src="album.js"></script>
+<script>
+    var images = [
+        {id: 1, url: '../resource/img1.jpeg'},
+        {id: 2, url: '../resource/img2.jpeg'},
+        {id: 3, url: '../resource/img3.jpeg'},
+        {id: 4, url: '../resource/img4.jpeg'},
+        {id: 5, url: '../resource/img5.jpeg'},
+        {id: 6, url: '../resource/img6.jpeg'}
+    ];
+
+    var img1 = document.getElementById('img1');
+
+    var album = new Album(images, img1, 2000);
+    album.start();
+
+</script>
+</body>
+</html>

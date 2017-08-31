@@ -6,19 +6,34 @@
 </head>
 <body>
 <button id="btn1"> Click</button>
+<button id="btn2" name="btn2"> Refresh</button>
 <div id="divMain" class="myClass">
 
 </div>
-<script src="queryABC.js">
-</script>
+<!--<script src="queryABC.js">-->
+<!--</script>-->
 
 <script>
+    
+
     var btn1 = document.getElementById('btn1');
     btn1.onclick = function () {
         var div1 = document.querySelectorABC('  .myClass #divMain div');
         var div2 = querySelectorABC(document,"#divMain .myClass");
         console.log(div1 == div2);
     }
+
+    document.getElementById('btn2').onclick = function () {
+//        test window location
+//        window.location.replace('https://www.baidu.com')
+//        window.open('https://www.baidu.com')
+//        alert(location.protocol);
+//        alert(location.hostname);
+//        alert(window.location.pathname);
+//        alert(location.search);
+//        alert(location.port);
+    }
+
 </script>
 </body>
 </html>

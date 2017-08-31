@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="img1" src="../resource/loading.gif">
+<script>
+    var images = [
+        {id: 1, url: '../resource/img1.jpeg'},
+        {id: 2, url: '../resource/img2.jpeg'},
+        {id: 3, url: '../resource/img3.jpeg'},
+        {id: 4, url: '../resource/img4.jpeg'},
+        {id: 5, url: '../resource/img5.jpeg'},
+        {id: 6, url: '../resource/img6.jpeg'}
+    ];
+
+    var img1 = document.getElementById('img1');
+
+    loadImage(0);
+
+    function loadImage(i, interval) {
+        if (images[i] && images[i].url) {
+            interval = interval || 0;
+            setTimeout(() => {
+                var img = new Image();
+                img.onload = function () {
+                    images[i++].isload = true;
+                    img1.style.opacity = 0.5;
+                    img1.style.transition = "";
+                    img1.src = img.src;
+                    setTimeout(function () {
+                        img1.style.transition = '1s opacity';
+                        img1.style.opacity = 1;
+                        loadImage(i, 2000);
+                    }, 10)
+                }
+                img.src = images[i].url;
+            }, interval);
+        } else {
+            showImage();
+        }
+    }
+
+    function showImage() {
+        var i = 0;
+        setInterval(function () {
+            img1.style.opacity = 0.5;
+            img1.style.transition = "";
+            img1.src = images[i%6].url;
+            setTimeout(function () {
+                img1.style.transition = "1s opacity";
+                img1.style.opacity = 1;
+            },10)
+            i++;
+            i = i%6;
+        }, 2000);
+    }
+
+</script>
+</body>
+</html>
