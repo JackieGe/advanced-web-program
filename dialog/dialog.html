@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .dialog {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            border: 2px solid red;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<div class="dialog">
+
+</div>
+<script>
+    var dialog = document.getElementsByClassName('dialog')[0];
+    var dx, dy;
+    var timeout;
+
+    function mouseMoveHandler(evt) {
+        if (evt.buttons && dx!=null && dx != undefined && dy != null && dy!= undefined) {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            timeout = setTimeout(function () {
+                if (0 < evt.clientX - dx && evt.clientX - dx < document.documentElement.offsetWidth - 200) {
+                    dialog.style.left = evt.clientX - dx + 'px';
+                    dialog.style.top = evt.clientY - dy + 'px';
+                }
+            }, 0)
+//            if (0 < evt.clientX - dx && evt.clientX - dx < document.documentElement.offsetWidth - 200) {
+//                dialog.style.left = evt.clientX - dx + 'px';
+//                dialog.style.top = evt.clientY - dy + 'px';
+//            }
+        }
+    }
+
+    dialog.onmousedown = function (evt) {
+        this.addEventListener('mousemove', mouseMoveHandler)
+        dx = evt.clientX - dialog.offsetLeft;
+        dy = evt.clientY - dialog.offsetTop;
+    }
+
+
+    dialog.onmouseup = function (evt) {
+        dx = null;
+        dy = null;
+        this.removeEventListener('mousemove', mouseMoveHandler);
+
+    }
+
+
+</script>
+</body>
+</html>

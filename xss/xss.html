@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea id="ta"> </textarea>
+<button id="btn">click me</button>
+<script>
+    var ta = document.getElementById('ta');
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var img = document.createElement('img');
+        img.src='x';
+        img.onerror = function () {
+//            var script = document.createElement('script');
+//            script.type ='text/javascript';
+//            script.text = ta.value;
+//            document.body.appendChild(script);
+
+//            var tb = document.createElement('input');
+//            tb.type = 'text';
+//            document.body.appendChild(tb);
+//            tb.value = ta.value;
+//            var div = document.createElement('div');
+//            div.innerHTML = ta.value;
+//            document.body.insertAdjacentElement('beforeEnd', div)
+
+            var div2 = "<div> "  + ta.value +  " </div>"
+            document.body.insertAdjacentHTML('beforeEnd', div2);
+        }
+        document.body.appendChild(img);
+    }
+
+</script>
+</body>
+</html>
