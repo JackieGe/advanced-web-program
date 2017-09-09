@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div {
+            width: 100px;
+            height:100px;
+            border: solid 2px red;
+        }
+    </style>
+</head>
+<body>
+<button id="btn1">
+    Add
+</button>
+<button id="btn2">
+    Remove
+</button>
+<script>
+    var count = 0;
+    var btn1 = document.getElementById('btn1');
+
+    function Test() {
+    }
+
+
+    function getDivMessage() {
+        var div = document.getElementsByName('div')[0];
+        return function show() {
+            if (div) {
+                alert(div.innerText);
+            }
+        }
+    }
+
+    var divMessage = getDivMessage();
+
+    btn1.addEventListener('click', function () {
+        var div = document.createElement('div');
+        div.classList.add('div');
+        var test = new Test();
+        test.div = div;
+        div.onclick = handle;
+
+        function handle() {
+            div.innerText = 'Hello world';
+            console.log(test)
+        }
+        //        document.body.appendChild(div);
+    } ,false);
+
+    var btn2 = document.getElementById('btn2');
+    btn2.onclick = function () {
+        var divs = Array.from(document.getElementsByClassName('div'));
+        for (var i=0; i <divs.length; i++) {
+            document.body.removeChild(divs[i]);
+        }
+    }
+</script>
+</body>
+</html>
