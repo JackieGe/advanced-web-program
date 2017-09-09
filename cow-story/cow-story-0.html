@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .inputRow__label, .inputRow__box {
+            list-style: none;
+            display: inline-block;
+        }
+
+        .inputRow__label {
+            width: 80px;
+            text-align: right;
+            white-space: pre-wrap;
+        }
+
+        .inputRow__box {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="inputRow__label"> Mature Age:</li>
+    <li class="inputRow__box">
+        <input type="text" id="tbMatureAge" value="4">
+    </li>
+</ul>
+
+<ul>
+    <li class="inputRow__label"> Life Age:</li>
+    <li class="inputRow__box">
+        <input type="text" id="tbLifeAge" value="20">
+    </li>
+</ul>
+
+<ul>
+    <li class="inputRow__label"> Years:</li>
+    <li class="inputRow__box">
+        <input type="text" id="tbYears" value="30">
+    </li>
+</ul>
+<button id="btn1">
+    Show Result - loop
+</button>
+<button id="btn2">
+    Show Result - recursive
+</button>
+<script>
+    var matureAge;
+    var lifeAge;
+    var years;
+
+    function count_cow_with_loop(year, matureAge, lifeAge) {
+        if (year < matureAge) {
+            return year;
+        }
+
+        var y = matureAge - 1;
+        var arr = new Array(y);
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+
+        var fn;
+        var tmp = 0;
+        while (y++ < year) {
+            fn = arr[arr.length - 1] + arr[arr.length + 1 - matureAge];
+            if (arr.length < lifeAge - 1) {
+                arr.push(fn)
+            } else {
+                tmp = arr[0]
+                for (var i = 0; i < arr.length - 1; i++) {
+                    arr[i] = arr[i + 1];
+                }
+                arr[arr.length - 1] = fn;
+            }
+
+        }
+        fn -= tmp;
+        return fn;
+    }
+
+    function count_cow_with_recursion(n) {
+        if (n < lifeAge) {
+            return count_cow(n)
+        } else {
+            return count_cow(n) - count_cow(n - (lifeAge - 1))
+        }
+
+        function count_cow(n) {
+            if (n < matureAge) {
+                return n;
+            } else {
+                return count_cow(n - 1) + count_cow(n - (matureAge - 1))
+            }
+        }
+    }
+
+    function parseInputs() {
+        matureAge = parseInt(document.getElementById('tbMatureAge').value) || 4;
+        lifeAge = parseInt(document.getElementById('tbLifeAge').value) || 20;
+        years = parseInt(document.getElementById('tbYears').value) || 30;
+    }
+
+
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function () {
+        parseInputs();
+        alert(count_cow_with_loop(years, matureAge, lifeAge));
+    }
+    var btn2 = document.getElementById('btn2');
+    btn2.onclick = function () {
+        parseInputs();
+        alert(count_cow_with_recursion(years, matureAge, lifeAge));
+    }
+
+</script>
+</body>
+</html>
