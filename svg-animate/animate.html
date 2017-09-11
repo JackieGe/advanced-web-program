@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <polygon points="30 30, 70 30, 90 70, 10 70" style="fill:#fcc; stroke: black">
+        <animate id="animation" attributeName="points" attributeType="XML" to="50 30 70 50 50 90 30 50"
+                 begin="0s" dur="3s" fill="freeze">
+
+        </animate>
+    </polygon>
+    <path d="M15 50 Q40 15, 50 50, 65 32, 100 40"
+          style="fill:none; stroke: black; stroke-width: 1px" transform="translate(0, 50)">
+        <animate attributeName="d" attributeType="XML" to="M50 15 Q15 40, 50 50, 32 65, 40 100"
+                 begin="0s" dur="5s" fill="freeze"></animate>
+        <animate attributeName="stroke" attributeType="CSS" to="rgba(250,50,50,0.9)"
+                 begin="3s" dur="2s" fill="freeze"></animate>
+        <animate attributeName="stroke-width" attributeType="CSS" to="4px" begin="3s" dur="2s"
+                 repeatCount="10"
+                 fill="freeze"></animate>
+        <animateTransform attributeName="transform" attributeType="XML" type="scale" additive="sum"
+                          from="1" to="2 1.5" begin="0s" dur="4s" fill="freeze"></animateTransform>
+    </path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+    <path id="cubicCurve" d="M50, 125 Q 100,25 150,225 200,125" style="stroke: blue; fill: none"></path>
+    <path d="M-10,-3 L10,-3 L0,-25z" style="fill:yellow; stroke:red">
+        <animateMotion rotate="auto" dur="5s" fill="freeze">
+            <mpath xlink:href="#cubicCurve"></mpath>
+        </animateMotion>
+    </path>
+</svg>
+</body>
+</html>

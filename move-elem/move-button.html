@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn1" style="color: red">Button 1</button>
+<button id="btn2">Button 2</button>
+<script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    btn1.onclick = function () {
+        var obj = btn1.cloneNode(true);
+        if (btn2.nextElementSibling) {
+            btn2.parentElement.insertBefore(obj, btn2.nextElementSibling)
+        } else {
+            btn2.parentElement.appendChild(obj)
+        }
+        obj.parentElement.removeChild(btn1)
+    }
+
+</script>
+</body>
+</html>

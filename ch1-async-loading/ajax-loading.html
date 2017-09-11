@@ -8,7 +8,7 @@
             var xhr = new XMLHttpRequest();
             xhr.open('get', file, true);
             // for IE
-            if (xhr.onreadystatechange) {
+            if (xhr.readyState) {
                 xhr.onreadystatechange = function () {
                     console.log(xhr.readyState, xhr.status);
                     if (xhr.readyState == 4) {
