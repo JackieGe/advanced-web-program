@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf8"/>
+    <meta name="viewport" content="width:device-width"/>
+    <title>Title</title>
+    <style>
+        .parent {
+            background-color: darkgrey;
+            /*overflow: hidden;*/
+            /*position: fixed;*/
+            /*position: relative;*/
+            /*display: block;*/
+            /*float: left;*/
+            /*display: inline-block;*/
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        /*.parent::after {*/
+        /*content: '';*/
+        /*display: block;*/
+        /*clear: both;*/
+        /*}*/
+
+        .child1 {
+            /*position: absolute;*/
+            width: 50px;
+            height: 50px;
+            float: left;
+            background-color: red;
+        }
+
+        .child2 {
+            /*position: absolute;*/
+            width: 100px;
+            height: 80px;
+            float: right;
+            background-color: greenyellow;
+        }
+
+        .outer {
+            position: relative;
+            height: 300px;
+            background-color: red;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto 0px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="child1">
+
+    </div>
+    <div class="child2">
+
+    </div>
+    <br>
+
+</div>
+
+<div class="outer">
+    <div class="inner"></div>
+    <button id="btn1">Start time</button>
+    <button id="btn2">Time to end of year</button>
+</div>
+<div><span id="time"></span></div>
+<br/>
+<div><span id="time2"></span></div>
+<script>
+    function formatDate(fmt) { // 17 dd 0017 -> y=
+        var d = new Date()
+        var objF = {
+            'm+': d.getMonth() + 1,
+            'd+': d.getDate(),
+            'h+': d.getHours(),
+            'M+': d.getMinutes(),
+            's+': d.getSeconds()
+        }
+        if (/y+/.test(fmt)) {
+            var y = /y+/.exec(fmt)[0];
+            var year = ('' + d.getFullYear()).substr(4 - y.length);
+            fmt = fmt.replace(/y+/, year);
+        }
+
+        for (var f in objF) {
+            fmt = fmt.replace(new RegExp(f), function ($1) {
+                if ($1.length > 1) {
+                    var tmp = '00' + objF[f];//007  dd 3-2
+                    //                       //0017 dd 4-2
+                    return tmp.substr(tmp.length - $1.length)
+                }
+                return objF[f]
+            })
+        }
+        return fmt
+    }
+
+    function timingLeftToYear() {
+        var yearEnd = new Date(2017, 12, 31, 23, 59, 59);
+        var msToYearEnd = yearEnd - new Date();
+        var days = ~~(msToYearEnd / 1000 / 60 / 60 / 24);
+        var hours = ~~(msToYearEnd / 1000 / 60 / 60 % 24);
+        var minutes = ~~(msToYearEnd / 1000 / 60 % 60);
+        var seconds = ~~(msToYearEnd / 1000 % 60);
+        var ret = days + ' days ' + hours + ' : ' + minutes + ' : ' + seconds;
+        return ret;
+    }
+
+    document.getElementById('btn1').onclick = function () {
+        var span = document.getElementById('time');
+        setInterval(() => {
+            var ret = formatDate('yy-mm-dd hh:MM:ss')
+            span.innerText = ret;
+        }, 100);
+    }
+
+    document.getElementById('btn2').onclick = function () {
+        var span = document.getElementById('time2');
+        setInterval(() => {
+            var ret = timingLeftToYear()
+            span.innerText = ret;
+        }, 100);
+    }
+</script>
+</body>
+</html>

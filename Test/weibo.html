@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            --topHeight: calc(100px - 20px);
+            --offsetLeft: 10%;
+            --leftWidth: 120px;
+            --rightWidth: 200px;
+        }
+
+        .top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 96%;
+            height: var(--topHeight);
+            margin: 0px auto;
+            border: 1px solid green;
+            background-color: green;
+            z-index: 1;
+        }
+
+        .left {
+            width: var(--leftWidth);
+            height: 500px;
+            position: fixed;
+            top: var(--topHeight);
+            left: var(--offsetLeft);
+            background-color: aqua;
+        }
+
+        .center {
+            height: 1000px;
+            position: absolute;
+            top: var(--topHeight);
+            left: calc(var(--offsetLeft) + var(--leftWidth));
+            right: calc(var(--offsetLeft) + var(--rightWidth));
+            border: 1px solid yellow;
+            background-color: yellow;
+        }
+
+        .right {
+            background-color: #ffcccc;
+            width: 220px;
+            height: 500px;
+            position: fixed;
+            top: var(--topHeight);
+            right: var(--offsetLeft);
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+
+</div>
+<div class="left"></div>
+<div class="right"></div>
+
+<div class="center"></div>
+
+<script>
+    window.onscroll = function (evt) {
+        var center = document.getElementsByClassName('center')[0].getBoundingClientRect();
+        if (center.top > 70) {
+            console.log(center.top);
+        }
+    }
+
+    var center = document.getElementsByClassName('center')[0];
+    center.addEventListener('touchstart',function (evt) {
+        console.log(evt.touches);
+    },false)
+</script>
+</body>
+</html>
